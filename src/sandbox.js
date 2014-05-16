@@ -1,6 +1,7 @@
 // TODO:
 // 1) write isType() functions for string, array, object and
 //    integrate into typeof/instanceof tests (see $.isPlainObject)
+// 2) Rewrite Asset.prototype.load to allow for callbacks
 
 (function(window, undefined) {
   "use strict";
