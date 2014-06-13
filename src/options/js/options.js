@@ -21,9 +21,18 @@ $(function() {
   }
 
   // get the initial list of aliases
-  chrome.storage.sync.get('settings', function(resp) {
-    renderAliases(resp.settings.aliases);
-    $tracking.prop('checked', resp.settings.tracking);
+  chrome.storage.sync.get('settings', function(items) {
+    var settings;
+    if (items.settings) 
+      aliases = items.settings.aliases || {};
+    else {
+      settings = {
+        aliases: {},
+        tracking: true
+      };
+
+      chrome.storage.sync.set({settings: settings});
+    }
   });
 
   // add contenteditable to the appropriate .query element when the user 
