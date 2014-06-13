@@ -1,0 +1,38 @@
+{
+  "name": "Sandbox",
+  "version": "0.8.1",
+  "manifest_version": 2,
+  "description": "Sandbox is a dynamic asset loader built into the Chrome console.",
+  "homepage_url": "http://wcvd.me/sandbox",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "background": {
+    "scripts": [
+      "src/bg/background.js"
+    ],
+    "persistent": false
+  },
+  "options_page": "src/options/index.html",
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "*://*/*",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_start",
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "src/inject/sandbox.js"
+  ]
+}

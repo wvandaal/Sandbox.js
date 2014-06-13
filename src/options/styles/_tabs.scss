@@ -1,0 +1,27 @@
+.tab {
+  color: $grey3;
+  display: none;
+  > header {
+    font-size: 1.5em;
+    line-height: 2.25em;
+    border-bottom: 1px solid $grey1;
+    margin-bottom: 1em;
+  }
+  > section {
+    padding: 0 2em 0 1em;
+    margin: 1em 0 2.5em;
+    > header {
+      margin-left: -1em;
+      margin-bottom: 1em;
+      font-size: 1.15em;
+    }
+    p {
+      line-height: 1.5em;
+    }
+    blockquote {
+      margin: 0;
+      padding: 1em;
+      background: $grey1;
+    }
+  }
+}

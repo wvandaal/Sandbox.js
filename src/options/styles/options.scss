@@ -1,0 +1,132 @@
+@import 'variables';
+@import 'menu';
+@import 'tabs';
+
+html, body {
+  font-family: 'Lucida Grande', sans-serif;
+  font-size: 12px;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  border-bottom: 1px solid $grey1;
+  margin-bottom: 2em;
+  clear: both;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  thead {
+    th {
+      height: 2em;
+      border-bottom: 1px solid $grey4;
+    }
+  }
+  tbody {
+    > tr {
+      height: 2.5em;
+      vertical-align: middle;
+      > td {
+        text-align: center;
+        border-bottom: 1px solid $grey1;
+      }
+    }
+  }
+
+  .invalid {
+    color: red;
+  }
+}
+
+
+// specific styles for the aliases table
+#aliases {
+  tbody {
+    > tr {
+      > td {
+        &.alias {
+          width: 20%;
+        }
+        &.query {
+          width: 70%;
+        }
+        &.delete {
+          opacity: 0;
+          width: 10%;
+          border: none;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      &:hover {
+        > td.delete {
+          opacity: 1;
+          background: $red1;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .invalid {
+    color: red;
+  }
+}
+
+#viewport {
+  margin-left: 180px;
+  min-width: 650px;
+  max-width: 800px;
+}
+
+button, input[type='submit'] {
+  height: 2em;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+  background-image: -webkit-linear-gradient(#ededed, #ededed 38%, #dedede);
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.75);
+  color: #444;
+  font: inherit;
+  margin: 0 1px 0 0;
+  outline: none;
+  text-shadow: 0 1px 0 rgb(240, 240, 240);
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input[type='text'] {
+  padding: 0.5em;
+  color: $grey4;
+  border: 1px solid $grey2;
+}
+
+#save {
+  float: right;
+}
+
+#newAlias {
+  width: 100px;
+}
+
+#newQuery {
+  width: 400px;
+}
+
+#valid {
+  padding: 0.25em;
+  font-size: 1.5em;
+}
+
+.icon-ok-circle {
+  color: $green1;
+}
+
+.icon-cancel-circle {
+  color: $red1;
+}

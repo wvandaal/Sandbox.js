@@ -1,0 +1,43 @@
+#options-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 180px;
+  z-index: 1;
+  > header {
+    font-size: 1.5em;
+    margin: 1em;
+    color: $grey3;
+  }
+  > ul {
+    list-style: none;
+    padding: 0;
+    margin: 1em 0;
+    > li {
+      margin: 0.25em 1.5em;
+      position: relative;
+      line-height: 2.5em;
+      color: $grey2;
+      &.selected {
+        color: $grey4;
+         &:before {
+          content: "";
+          position: absolute;
+          left: -1.5em;
+          display: inline-block;
+          width: 5px;
+          height: 100%;
+          background: $grey4;
+        }
+      }
+      &:last-child {
+        margin-top: 2em;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }  
+}

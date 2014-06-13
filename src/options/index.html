@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles/options.css">
+  <link rel="stylesheet" href="styles/fontello.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/options.js"></script>
+</head>
+<body>
+
+  <nav id="options-menu">
+    <header>Sandbox</header>
+    <ul>
+      <li data-target="aliasing">Aliasing</li>
+      <li data-target="load-balancing">Load Balancing</li>
+      <li data-target="help">Help</li>
+    </ul>
+  </nav>
+
+  <div id="viewport">
+    <div id="aliasing" class="tab">
+      <header>Aliasing</header>
+    
+      <section>
+        <header>Manage Existing</header>
+        <blockquote><strong>Tip: </strong>Edit an existing alias by double-clicking on the associated query string and entering your changes.</blockquote>
+        <br>
+        <table id="aliases">
+          <thead>
+            <th>Alias</th>
+            <th>Query String</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </section>
+      
+    
+      <section>
+        <header>Create New Alias</header>
+        <form id="aliasForm">
+          <input type='text' id="newAlias" placeholder="Alias">
+          <input type='text' id="newQuery" placeholder="Query"><span id="valid"><i></i></span>
+          <br>
+          <br>
+          <input type="submit" value="Add Alias">
+        </form>
+      </section> 
+    </div>
+    
+    
+    <div id="load-balancing" class="tab">
+      <header>Load Balancing</header>
+      <section>
+        <header>Contribute Performance Data</header>
+        <p>
+          Sandbox is built using the <strong>jsdelivr</strong> CDN, which uses real user performance data (also known as RUM) to make its routing decisions. This data is gathered from hundreds of websites and is used in jsdelivr's load balancing algorithm to make accurate decisions based on real time performance metrics. The guys at jsdelivr have built a great service and given it to us totally free, which is why we'd like to give you the chance to help them out by contributing to their RUM.
+        </p>
+        <br>
+    
+        <label for="rum"><input id="rum" type="checkbox">
+          Yes, I'd like to anonymously contribute to jsdelivr's user performance data
+        </label>
+        <br>
+        <br>
+    
+        <p>For more information about what information is reported and jsdelivr's privacy policy, check out <a href="https://github.com/jsdelivr/jsdelivr#contribute-performance-data">their docs</a></p>
+      </section>
+    </div>
+    
+    <div id="help" class="tab">
+      <header>Help</header>
+    
+      <section>
+        <header>Aliasing</header>
+        <p class="description">
+          Aliasing allows you to easily define shorthand query strings that are tied to your favorite asset combinations. To link an alias to a series of resource queries, simply define your alias and type each library query you wish to include using the standard syntax:
+    
+          <pre><code><em>libarary</em> @<em>version</em> : [<em>files</em>]</code></pre><br>
+    
+          If you wish to include multiple libraries in your alias, simply separate them with the unary <em>'&'</em><br>
+    
+          <pre><code>jquery @1.11.1 : [jquery.js] & underscorejs</code></pre><br>
+    
+          Aliasing will allow you to quickly load your favorite libararies with a couple of keystrokes. The following two function calls are equivalent:
+    
+    <pre>
+    <code>
+    // if window.Sandbox.aliases = {'$': 'jquery @1.11.1 : [jquery.js]'}
+    
+    __('$');
+    
+    __('jquery @1.11.1 : [jquery.js]');
+    </code>
+    </pre>
+    
+          You may additionally specify a special alias <code>$DEFAULT</code> which will be used as an argument if the Sandbox constructor is called without any query strings.
+          <br>
+          <br>
+          For more information about aliasing, check out the <a href="http://wcvd.me/sandbox#aliasing">Sandbox.js docs</a>
+        </p>       
+      </section>
+    </div>
+    
+    <hr>
+    <button id="save">Save Settings</button>  
+  </div>
+</body>
+</html>
