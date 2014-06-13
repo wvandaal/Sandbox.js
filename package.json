@@ -1,6 +1,6 @@
 {
   "name": "sandbox.js",
-  "version": "0.3.5",
+  "version": "0.8.1",
   "description": "A dynamic asset loader extension for the Chrome browser",
   "main": "sandbox.js",
   "scripts": {
